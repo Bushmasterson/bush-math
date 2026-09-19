@@ -1,4 +1,11 @@
 .venv/
-media/
 __pycache__/
-.vscode/
+*.pyc
+media/
+videos/
+*.mp4
+*.mov
+*.gif
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
