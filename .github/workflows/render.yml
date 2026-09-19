@@ -1,14 +1,32 @@
 name: Render
+
 on: [push, pull_request]
+
 jobs:
   render:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
-        with: { python-version: '3.12' }
-      - run: pip install manim
-      - run: |
+        with:
+          python-version: '3.12'
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libcairo2-dev \
+            libpango1.0-dev \
+            libpangocairo-1.0-0 \
+            ffmpeg
+
+      - name: Install Python dependencies
+        run: pip install manim
+
+      - name: Render all scenes
+        run: |
           for f in scenes/*.py; do
+            echo "=== Rendering $f ==="
             manim -ql --disable_caching "$f" || exit 1
           done
