@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Manim: unit_circle (preview)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "manim",
+      "console": "integratedTerminal",
+      "args": ["-pql", "scenes/unit_circle.py", "UnitCircleSine"]
+    },
+    {
+      "name": "Manim: unit_circle (2K)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "manim",
+      "console": "integratedTerminal",
+      "args": ["-p", "scenes/unit_circle.py", "UnitCircleSine"]
+    }
+  ]
+}
