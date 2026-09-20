@@ -1,11 +1,43 @@
-.venv/
+# ─── Python ────────────────────────────────────────
 __pycache__/
-*.pyc
+*.py[cod]
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# ─── Manim output ──────────────────────────────────
 media/
 videos/
 *.mp4
 *.mov
-*.gif
+!assets/**/*.mp4
+
+# ─── Audio (big files, keep locally) ───────────────
+assets/*.mp3
+assets/*.wav
+assets/*.ogg
+assets/*.m4a
+
+# ─── IDE ───────────────────────────────────────────
 .vscode/*
 !.vscode/settings.json
 !.vscode/launch.json
+.idea/
+*.swp
+*.swo
+
+# ─── OS ────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ─── LaTeX / Manim cache ───────────────────────────
+*.tex
+*.aux
+*.log
+*.dvi
+*.out
+*.toc
